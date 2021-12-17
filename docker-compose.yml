@@ -8,11 +8,11 @@ services:
     networks:
       - backend
     depends_on:
-      - postgres
+      - db
     ports:
       - "80:3000"
     restart: unless-stopped
-  postgres:
+  db:
     image: postgres:14
     restart: unless-stopped
     env_file:
