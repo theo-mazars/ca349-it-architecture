@@ -8,7 +8,7 @@
 
 <br>
 
-Fullstack Next.js E-commerce
+Fullstack Next.js E-commerce [![Docker Image CI](https://github.com/theo-mazars/ca349-it-architecture/actions/workflows/docker-image.yml/badge.svg)](https://github.com/theo-mazars/ca349-it-architecture/actions/workflows/docker-image.yml)
 
 </h1>
 
