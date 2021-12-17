@@ -36,14 +36,14 @@ Fullstack Next.js E-commerce
 
 <br>
 
-## Code Example/Issues 🔍
+## Disclaimer 🚨
 
-If you have any issues, please let me know in the issues section or directly to olafsulich@gmail.com
+This code is not aimed to be reused, if you have complaints or want to contribute, please check [fullstack-nextjs-ecommerce](https://github.com/olafsulich/fullstack-nextjs-ecommerce/) first.
 
 ## Installation 💾
 
 ```bash
-git clone https://github.com/olafsulich/fullstack-nextjs-ecommerce.git
+git clone https://github.com/theo-mazars/ca349-it-architecture.git
 ```
 
 Fill your `.env` variables:
@@ -64,7 +64,7 @@ NEXT_PUBLIC_STRIPE_SUCCESS_REDIRECT_URL=
 NEXT_PUBLIC_STRIPE_ERROR_REDIRECT_URL
 ```
 
-Install deps:
+### Install dev deps:
 
 ```bash
 npm install
@@ -79,7 +79,7 @@ npx prisma generate
 Run docker-compose:
 
 ```bash
-docker-compose up -d
+docker-compose up -d postgres
 ```
 
 Run Next dev server:
@@ -88,6 +88,18 @@ Run Next dev server:
 npm run dev
 ```
 
+### Start production
+
+```bash
+docker-compose up -d --build
+```
+
 ## Contributing
 
-This is an open source project, and contributions of any kind are welcome and appreciated. Open issues, bugs, and feature requests are all listed on the [issues](https://github.com/olafsulich/fullstack-nextjs-ecommerce/issues) tab and labeled accordingly. Feel free to open bug tickets and make feature requests.
+Please refer to the [original repossitory](https://github.com/olafsulich/fullstack-nextjs-ecommerce)
+
+## Authors
+
+- [Olaf Sulich](https://github.com/olafsulich) (Original Creator)
+- [Theo Mazars](https://github.com/theo-mazars) (Minor fixes)
+- [Valentin Charbonnier](https://github.com/valentinbreiz) (Minor fixes)

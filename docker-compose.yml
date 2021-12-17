@@ -1,13 +1,31 @@
 version: "3.8"
 services:
+  website:
+    build: .
+    image: fullstack-next
+    env_file:
+      - .env
+    networks:
+      - backend
+    depends_on:
+      - postgres
+    ports:
+      - "80:3000"
+    restart: unless-stopped
   postgres:
     image: postgres:14
-    restart: always
+    restart: unless-stopped
     env_file:
       - .env
     volumes:
       - postgres:/var/lib/postgresql/data
+    networks:
+      - backend
     ports:
       - "5432:5432"
+
 volumes:
   postgres:
+
+networks:
+  backend:

@@ -13,9 +13,6 @@ export default NextAuth({
       clientSecret: getEnv('GITHUB_SECRET'),
     }),
   ],
-  pages: {
-    signIn: '/auth/signin',
-  },
   adapter: PrismaAdapter(prisma),
   secret: getEnv('SECRET'),
 });

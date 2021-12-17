@@ -1,9 +1,9 @@
-import { Dispatch, Fragment, SetStateAction } from "react";
-import { Dialog, Transition } from "@headlessui/react";
-import { XIcon } from "@heroicons/react/outline";
-import { CartItems } from "./CartItems";
-import { useCart } from "./hooks/useCart";
-import { useCheckout } from "./hooks/useCheckout";
+import { Dispatch, Fragment, SetStateAction } from 'react';
+import { Dialog, Transition } from '@headlessui/react';
+import { XIcon } from '@heroicons/react/outline';
+import { CartItems } from './CartItems';
+import { useCart } from './hooks/useCart';
+import { useCheckout } from './hooks/useCheckout';
 
 export const Checkout = () => {
   const {
@@ -12,18 +12,14 @@ export const Checkout = () => {
   } = useCart();
   const { mutate } = useCheckout();
 
-  const handleOpenMenu = () => dispatch({ type: "openMenu" });
-  const handleCloseMenu = () => dispatch({ type: "closeMenu" });
+  const handleOpenMenu = () => dispatch({ type: 'openMenu' });
+  const handleCloseMenu = () => dispatch({ type: 'closeMenu' });
 
   const handleCheckout = () => mutate(products);
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
-      <Dialog
-        as="div"
-        className="fixed inset-0 overflow-hidden"
-        onClose={handleOpenMenu}
-      >
+      <Dialog as="div" className="fixed inset-0 overflow-hidden" onClose={handleOpenMenu}>
         <div className="absolute inset-0 overflow-hidden">
           <Transition.Child
             as={Fragment}
@@ -52,7 +48,7 @@ export const Checkout = () => {
                   <div className="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
                     <div className="flex items-start justify-between">
                       <Dialog.Title className="text-lg font-medium text-gray-900">
-                        Koszyk
+                        My cart
                       </Dialog.Title>
                       <div className="ml-3 h-7 flex items-center">
                         <button
@@ -71,8 +67,8 @@ export const Checkout = () => {
                   </div>
                   <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                     <div className="flex justify-between text-base font-medium text-gray-900">
-                      <p>Razem:</p>
-                      <p>{totalPrice / 100} zł</p>
+                      <p>Total:</p>
+                      <p>{totalPrice / 100} €</p>
                     </div>
 
                     <div className="mt-6">
@@ -81,7 +77,7 @@ export const Checkout = () => {
                           onClick={handleCheckout}
                           className="w-full flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
                         >
-                          Do kasy
+                          Proceed to payment
                         </button>
                       ) : null}
                     </div>
